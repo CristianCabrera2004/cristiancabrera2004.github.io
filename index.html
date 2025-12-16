@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Isla Misteriosa</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
-    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+    
 </head>
 <body>
     <header>
@@ -29,15 +28,20 @@
         </section>
     </main>
 
-   <df-messenger
+ <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+<script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+
+<df-messenger
   project-id="agente-ia-7315"
   agent-id="6d769929-bad2-4ce9-8906-43d678916f8d"
   language-code="es"
+  location="us-central1" 
   max-query-length="-1">
   
   <df-messenger-chat-bubble
    chat-title="Ciro IA"
-   enable-audio-input="true"> </df-messenger-chat-bubble>
+   enable-audio-input="true">
+  </df-messenger-chat-bubble>
 
 </df-messenger>
 
@@ -54,6 +58,26 @@
     right: 16px;
   }
 </style>
+
+<script>
+  const dfMessenger = document.querySelector('df-messenger');
+  
+  // 1. Verificar si intenta enviar
+  dfMessenger.addEventListener('df-request-sent', (event) => {
+    console.log('✅ Ciro IA: Intentando enviar solicitud...', event.detail);
+  });
+
+  // 2. Verificar si recibe respuesta
+  dfMessenger.addEventListener('df-response-received', (event) => {
+    console.log('✅ Ciro IA: Respuesta recibida', event.detail);
+  });
+
+  // 3. Verificar errores
+  dfMessenger.addEventListener('df-error', (event) => {
+    console.error('❌ Ciro IA: Error detectado', event.detail);
+    alert("Error detectado en el chat: " + JSON.stringify(event.detail));
+  });
+</script>
 
     <footer>
         <p>&copy; 2025 Proyecto La Isla Misteriosa. Todos los derechos reservados.</p>
