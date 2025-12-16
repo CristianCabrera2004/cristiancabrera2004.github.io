@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Isla Misteriosa</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+</head>
+<body>
+    <header>
+        <h1>La Isla Misteriosa</h1>
+        <p>Explora las maravillas y aventuras inspiradas en la novela clásica de Julio Verne.</p>
+    </header>
+    <main>
+        <section>
+            <h2>Sobre el Libro</h2>
+            <img src="img/a7f353c67b7e34dea198d3518f123a6d.webp" alt="Vista panorámica de una isla misteriosa" class="main-image">
+            <p>"La Isla Misteriosa" es una novela de Julio Verne que cuenta la historia de un grupo de náufragos que se encuentran en una isla inexplorada. Deben usar su ingenio y recursos para sobrevivir y descubrir los secretos de la isla.</p>
+        </section>
+        <section>
+            <h2>Galería</h2>
+            <div class="gallery">
+                <img src="img/El-24-de-marzo-de-1905-fallecio-Julio-Verne.jpg" alt="Volcán en la isla">
+                <img src="img/Ile_Mysterieuse_53.jpg" alt="Restos de un naufragio">
+                <img src="img/kenny-ruiz-isla-misteriosa-01.jpg" alt="Costa rocosa de la isla">
+            </div>
+        </section>
+    </main>
+
+   <df-messenger
+  project-id="agente-ia-7315"
+  agent-id="6d769929-bad2-4ce9-8906-43d678916f8d"
+  language-code="es"
+  max-query-length="-1">
+  
+  <df-messenger-chat-bubble
+   chat-title="Ciro IA"
+   enable-audio-input="true"> </df-messenger-chat-bubble>
+
+</df-messenger>
+
+<style>
+  df-messenger {
+    z-index: 999;
+    position: fixed;
+    --df-messenger-font-color: #000;
+    --df-messenger-font-family: Google Sans;
+    --df-messenger-chat-background: #f3f6fc;
+    --df-messenger-message-user-background: #d3e3fd;
+    --df-messenger-message-bot-background: #fff;
+    bottom: 16px;
+    right: 16px;
+  }
+</style>
+
+    <footer>
+        <p>&copy; 2025 Proyecto La Isla Misteriosa. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
